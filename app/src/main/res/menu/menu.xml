@@ -2,7 +2,19 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+        android:id="@+id/videoCall"
+        android:icon="@drawable/groupvideocall"
+        android:title="VideoCall" />
+    <item
+        android:id="@+id/chat"
+        android:icon="@drawable/chat"
+        android:title="Chat" />
+    <item
+        android:id="@+id/groupChat"
+        android:icon="@drawable/group"
+        android:title="Group Chat" />
+    <item
         android:id="@+id/logOut"
         android:icon="@drawable/logout"
-        android:title="Logout" />
+        android:title="LogOut" />
 </menu>

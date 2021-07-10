@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/teal_700"
-    tools:context=".SignupActivity">
+    tools:context=".Activities.SignUpActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -24,6 +24,13 @@
             android:background="@color/white"
             android:orientation="vertical">
 
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@drawable/videocall" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -31,8 +38,8 @@
                 android:fontFamily="@font/alfa_slab_one"
                 android:gravity="center"
                 android:text="VideoCallApp"
-                android:textColor="@color/purple_700"
-                android:textSize="40sp" />
+                android:textColor="#0C5373"
+                android:textSize="36sp" />
 
             <EditText
                 android:id="@+id/nameBox"
@@ -81,17 +88,21 @@
             <Button
                 android:id="@+id/createButton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/buttonstyle"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="#037C7B"
                 android:text="create a new account" />
 
             <Button
                 android:id="@+id/loginButton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/buttonstyle"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="#037C7B"
                 android:text="ALREADY HAVE AN ACCOUNT?" />
 
         </LinearLayout>
