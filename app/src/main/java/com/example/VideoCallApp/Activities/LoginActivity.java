@@ -42,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         dialog = new ProgressDialog(this);
         dialog.setMessage("Please wait..");
 
+        //CREATED INSTANCE OF FIREBASEAUTH
         mAuth = FirebaseAuth.getInstance();
 
         if(mAuth.getCurrentUser()!=null)
@@ -60,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
 
         forgotPassword = findViewById(R.id.forgotPassword);
 
-
+        //THE onClick FUNCTION INSIDE THE setOnClickListener EXECUTES WHEN THE LOGIN BUTTON IS CLICKED
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 else {
                     dialog.show();
-                    //For authorising the Email and Password from the database.
+                    //FOR AUTHORISING THE EMAIL AND PASSWORD FROM THE DATABASE
                     mAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -90,13 +91,16 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+        //THE onClick FUNCTION INSIDE THE setOnClickListener EXECUTES WHEN THE SIGN UP BUTTON IS CLICKED
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //IT WILL CHANGE THE ACTIVITY FROM LOGIN TO SIGN UP
                 startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
             }
         });
 
+        //THE onClick FUNCTION INSIDE THE setOnClickListener EXECUTES WHEN THE FORGOT PASSWORD TEXT FIELD IS CLICKED
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,6 +109,7 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "Please Enter the Registered Email", Toast.LENGTH_SHORT).show();
                 }
                 else {
+                    //IT WILL SEND THE RESET PASSWORD EMAIL TO THE REGISTERED EMAIL
                     mAuth.getInstance().sendPasswordResetEmail(emailBox.getText().toString())
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
@@ -121,6 +126,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
+
+    //PROPERLY NAVIGATES TO PREVIOUS DESTINATIONS WHEN THE WHEN THE BACK BUTTON IS PRESSED
     public void onBackPressed()
     {
         finishAffinity();

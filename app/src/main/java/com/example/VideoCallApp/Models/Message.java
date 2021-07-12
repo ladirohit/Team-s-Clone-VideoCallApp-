@@ -1,5 +1,6 @@
 package com.example.VideoCallApp.Models;
 
+//DECLARED A CLASS MESSAGES WITH ATTRIBUTES MESSAGE , MESSAGEID , SENDERID , IMAGEURL ALONG WITH A CONSTRUCTOR , GETTER AND SETTER METHODS
 public class Message {
     private  String message , messageId , senderId , imageUrl;
     private long timestamp;

@@ -49,9 +49,6 @@ public class ChatActivity extends AppCompatActivity {
 
         binding = ActivityChatBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-        //setSupportActionBar(binding.toolbar);
-
         dialog = new ProgressDialog(this);
         dialog.setMessage("Uploading Image.....");
         dialog.setCancelable(false);
@@ -68,9 +65,11 @@ public class ChatActivity extends AppCompatActivity {
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerView.setAdapter(adapter);
 
+        //CREATED INSTANCE OF FirebaseDatabase , FirebaseStorage
         database = FirebaseDatabase.getInstance();
         storage = FirebaseStorage.getInstance();
 
+        //IT FETCHES THE MESSAGES FROM THE DATABASE
         database.getReference().child("Chats")
                 .child(senderRoom)
                 .child("Messages")
@@ -92,6 +91,7 @@ public class ChatActivity extends AppCompatActivity {
                     }
                 });
 
+        //IT WILL SEND THE MESSAGES WRITTEN IN MESSAGE BOX TO THE SPECIFIED USER
         binding.sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,6 +135,7 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
 
+        //IT IS USED TO SEND IMAGES SELECTED BY THE USER TO THE SPECIFIED USER
         binding.attachment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -149,10 +150,10 @@ public class ChatActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle(name);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
     }
 
+
+    //IT WILL FETCH THE MESSAGES AND ITS DETAILS FROM THE DATABASE AND DISPLAYS THEM
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

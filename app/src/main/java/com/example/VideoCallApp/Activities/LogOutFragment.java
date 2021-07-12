@@ -23,8 +23,10 @@ public class LogOutFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_video_call, container, false);
-        //startActivity(new Intent(container.getContext() , MainActivity.class));
+
+        //THE onClick FUNCTION INSIDE THE setOnClickListener EXECUTES WHEN THE LOG OUT OF NAVIGATOR BAR  IS CLICKED
         DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+            //IF YES THAN IT CHANGES THE ACTIVITY FROM DASHBOARD TO MAIN
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 switch (which){
@@ -39,7 +41,7 @@ public class LogOutFragment extends Fragment {
                 }
             }
         };
-
+        //DIALOG TO ASK THE USER WHETHER USER REALLY WANTS TO LOG OUT FROM THE APP OR NOT
         AlertDialog.Builder builder = new AlertDialog.Builder(container.getContext());
         builder.setMessage("Do you want to logout?").setPositiveButton("Yes", dialogClickListener)
                 .setNegativeButton("No", dialogClickListener).show();

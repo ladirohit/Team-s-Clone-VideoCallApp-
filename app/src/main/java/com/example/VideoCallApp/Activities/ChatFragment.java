@@ -46,13 +46,14 @@ public class ChatFragment extends Fragment {
         View view  = inflater.inflate(R.layout.fragment_chat, container, false);
         recyclerView  = view.findViewById(R.id.recyclerView);
 
+        //FirebaseFireStore and FirebaseDatabase INSTANCE IS CREATED
         mFirebaseFirestore = FirebaseFirestore.getInstance();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         users = new ArrayList<>();
         usersAdapter = new UsersAdapter(container.getContext() , users);
         recyclerView.setAdapter(usersAdapter);
 
-
+        //IT WILL FETCH AL THE USERS DETAILS ALONG WITH CHATS FROM THE DATABASE AND SHOW THEM IN THE CHAT FRAGMENT
         mFirebaseDatabase.getReference().child("Users").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

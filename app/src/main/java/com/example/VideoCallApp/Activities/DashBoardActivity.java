@@ -22,7 +22,7 @@ public class DashBoardActivity extends AppCompatActivity {
         mTransaction.replace(R.id.content, new VideoCallFragment());
         mTransaction.commit();
 
-
+        //USED onNavigationItemSelected TO FIND WHICH IS BEEN CLICKED IN THE BOTTOM NAVIGATION BAR
         binding.bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -46,6 +46,8 @@ public class DashBoardActivity extends AppCompatActivity {
             }
         });
     }
+
+    //PROPERLY NAVIGATES TO PREVIOUS DESTINATIONS WHEN THE WHEN THE BACK BUTTON IS PRESSED
     public void onBackPressed()
     {
         finishAffinity();

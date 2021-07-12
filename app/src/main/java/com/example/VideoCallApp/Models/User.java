@@ -1,5 +1,7 @@
 package com.example.VideoCallApp.Models;
 
+
+//DECLARED A CLASS USER WITH ATTRIBUTES NAME , EMAIL , PASS , PROFILEIMAGE , UID ALONG WITH A CONSTRUCTOR , GETTER AND SETTER METHODS
 public class User {
     private String name , email , pass , profileImage = null , uid;
 

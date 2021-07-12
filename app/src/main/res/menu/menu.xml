@@ -4,7 +4,7 @@
     <item
         android:id="@+id/videoCall"
         android:icon="@drawable/groupvideocall"
-        android:title="VideoCall" />
+        android:title="Video Call" />
     <item
         android:id="@+id/chat"
         android:icon="@drawable/chat"
@@ -16,5 +16,5 @@
     <item
         android:id="@+id/logOut"
         android:icon="@drawable/logout"
-        android:title="LogOut" />
+        android:title="Log Out" />
 </menu>

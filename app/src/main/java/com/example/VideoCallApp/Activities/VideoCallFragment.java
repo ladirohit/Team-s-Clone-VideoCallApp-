@@ -26,6 +26,7 @@ public class VideoCallFragment extends Fragment {
         // Required empty public constructor
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -33,7 +34,6 @@ public class VideoCallFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_video_call, container, false);
         secretCodeBox = (EditText) view.findViewById(R.id.codeBox);
         joinBtn = (Button) view.findViewById(R.id.joinBtn);
-        //shareBtn = (Button) view.findViewById(R.id.shareBtn);
         URL serverURL;
 
 
@@ -49,11 +49,12 @@ public class VideoCallFragment extends Fragment {
             e.printStackTrace();
         }
 
-
+        //THE onClick FUNCTION INSIDE THE setOnClickListener EXECUTES WHEN THE JOIN BUTTON IS CLICKED
         joinBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(container.getContext(),"opende" , Toast.LENGTH_SHORT).show();
+                Toast.makeText(container.getContext(),"OPENED" , Toast.LENGTH_SHORT).show();
+                //TO CONNECT TO JITSI OPEN SOURCE TO HAVE A VIDEO CALL
                 JitsiMeetConferenceOptions options = new JitsiMeetConferenceOptions.Builder()
                         .setRoom(secretCodeBox.getText().toString())
                         .setWelcomePageEnabled(false)

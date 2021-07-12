@@ -42,6 +42,8 @@ public class GroupChatFragment extends Fragment {
     GroupMessagesAdapter adapter;
     ArrayList<Message> messages;
 
+
+
     FirebaseDatabase database;
     FirebaseStorage storage;
 
@@ -64,7 +66,7 @@ public class GroupChatFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        //FirebaseFireStore and FirebaseDatabase INSTANCE IS CREATED
         database = FirebaseDatabase.getInstance();
         storage = FirebaseStorage.getInstance();
         senderUid = FirebaseAuth.getInstance().getUid();
@@ -82,9 +84,11 @@ public class GroupChatFragment extends Fragment {
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(container.getContext()));
         binding.recyclerView.setAdapter(adapter);
 
+        //THE onClick FUNCTION INSIDE THE setOnClickListener EXECUTES WHEN THE SEND BUTTON IS CLICKED
         binding.sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //IT WILL SEND THE MESSAGE PRESENT IN MESSAGE BOX TO EVERY MEMBER IN THE GROUP
                 String messageText = binding.messageBox.getText().toString();
 
                 Date date = new Date();
@@ -98,6 +102,7 @@ public class GroupChatFragment extends Fragment {
             }
         });
 
+        //IT WILL MAKE THE MESSAGES SENT BY OTHER USERS IN THE GROUP VISIBLE TO US
         database.getReference()
                 .child("Public")
                 .addValueEventListener(new ValueEventListener() {

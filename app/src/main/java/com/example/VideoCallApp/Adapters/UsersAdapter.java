@@ -23,7 +23,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-
+//DECLARED MESSAGES ADAPTER FOR THE USERS VIEW IN THE ROW_CONVERSATION.XML
 public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UsersViewHolder> {
     Context context;
     ArrayList<User> users;

@@ -7,6 +7,17 @@
     android:background="@color/teal_700"
     tools:context=".Activities.MainActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/alfa_slab_one"
+        android:gravity="center"
+        android:text="MS Teams Clone"
+        android:textColor="#0C5373"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="120dp"

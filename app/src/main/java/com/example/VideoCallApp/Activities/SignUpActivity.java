@@ -32,6 +32,7 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+        //CREATED INSTANCE OF FIREBASEFIRESTORE ,  FIREBASEAUTH , FIREBASEDATABASE
         auth = FirebaseAuth.getInstance();
         database = FirebaseFirestore.getInstance();
         mDatabase = FirebaseDatabase.getInstance();
@@ -43,12 +44,16 @@ public class SignUpActivity extends AppCompatActivity {
         loginBtn = findViewById(R.id.loginButton);
         signUpBtn = findViewById(R.id.createButton);
 
+        //THE onClick FUNCTION INSIDE THE setOnClickListener EXECUTES WHEN THE LOGIN BUTTON IS CLICKED
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //IT WILL CHANGE THE ACTIVITY FROM SIGN UP TO LOGIN
                 startActivity(new Intent(SignUpActivity.this,LoginActivity.class));
             }
         });
+
+        //THE onClick FUNCTION INSIDE THE setOnClickListener EXECUTES WHEN THE SIGN UP BUTTON IS CLICKED
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,6 +80,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 database.collection("Users").document().set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
+                                        //IT WILL CHANGE THE ACTIVITY FROM SIGN UP TO LOGIN
                                         startActivity(new Intent(SignUpActivity.this,LoginActivity.class));
                                     }
                                 });
