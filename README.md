@@ -20,6 +20,4 @@ Personal Chat
 
 ![img2](https://user-images.githubusercontent.com/67555706/125438516-55969245-53f8-41bf-a6ba-b973e127e9a1.jpg)
 
-Demo Video of the App - https://www.youtube.com/watch?v=fxoi_bmHpCA
-
 
